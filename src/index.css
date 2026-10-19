@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-aura-ivory font-sans text-aura-ink antialiased;
+  }
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+  ::selection {
+    background: #e6ddd0;
+  }
+}
+
+@layer components {
+  .section-pad {
+    @apply px-5 py-20 sm:px-8 md:py-28;
+  }
+  .container-aura {
+    @apply mx-auto w-full max-w-7xl;
+  }
+  .kicker {
+    @apply mb-3 text-xs font-medium uppercase tracking-[0.3em] text-aura-gold-dark;
+  }
+  .heading {
+    @apply font-display text-4xl font-medium leading-tight text-aura-ink md:text-5xl;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-aura-gold px-7 py-3 text-sm font-medium tracking-wide text-white transition duration-300 hover:bg-aura-gold-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-aura-gold focus-visible:ring-offset-2;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-aura-gold px-7 py-3 text-sm font-medium tracking-wide text-aura-gold-dark transition duration-300 hover:bg-aura-gold hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-aura-gold focus-visible:ring-offset-2;
+  }
+  .input-aura {
+    @apply w-full rounded-xl border border-aura-sand bg-white px-4 py-3 text-sm text-aura-ink placeholder:text-aura-taupe/60 transition focus:border-aura-gold focus:outline-none focus:ring-2 focus:ring-aura-gold/30;
+  }
+}
+
+/* Barra horizontal sin scrollbar visible */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
